@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our online courses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <script type="text/javascript" src="main.js" defer></script>
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="header">
+        <h6 class="header__subtitle">ENJOY YOUR STUDING</h6>
+        <h1 class="header__title">Our online courses</h1>
+      </header>
+      <div class="panel">
+        <div class="toolbar">
+          <ul class="filter-items"></ul>
+          <div class="search-form">
+            <input type="text" class="search-form__input" id="search" placeholder="Search course..." />
+            <img class="search-form__button" src="assets/search.svg" />
+          </div>
+        </div>
+        <div class="courses-panel"></div>
+        <div class="load-more">
+          <img class="load-more__icon" src="assets/load.svg" alt="" />
+          <span class="load-more__text">Load more</span>
+        </div>
+      </div>
+    </div>
+    <template id="course-template">
+      <div class="course-item">
+        <div class="course-item__image-wrapper">
+          <img class="course-item__image" src="" />
+        </div>
+        <div class="course-item__content">
+          <div class="course-item__category"></div>
+          <div class="course-item__title"></div>
+          <div class="course-item__info">
+            <div class="course-item__price"></div>
+            <div class="course-item__divider"></div>
+            <div class="course-item__author"></div>
+          </div>
+        </div>
+      </div>
+    </template>
+    <template id="filter-item-template">
+      <li class="filter-item">
+        <span class="filter-item__title"></span>
+        <span class="filter-item__count"></span>
+      </li>
+    </template>
+  </body>
+</html>
