@@ -166,6 +166,18 @@ const isCourseMatchSearch = (course, search) => {
   );
 };
 
+// Map для возможных категорий и их цвет
+// prettier-ignore
+const categoriesColors = {
+  'Marketing': '#03CEA4',
+  'Management': '#5A87FC',
+  'HR & Recruting': '#F89828',
+  'Design': '#F52F6E',
+  'Development': '#7772F1',
+};
+
+const DEFAULT_CATEGORY_COLOR = '#777777';
+
 // создаем Map для категорий и считаем их кол-во по курсам
 const categoriesMap = new Map();
 
@@ -235,6 +247,8 @@ function fillCourseNode(node, course) {
   node.querySelector('.course-item__title').textContent = course.title;
   node.querySelector('.course-item__price').textContent = course.price;
   node.querySelector('.course-item__author').textContent = `by ${course.author}`;
+  node.querySelector('.course-item__category').style.backgroundColor =
+    categoriesColors[course.category] || DEFAULT_CATEGORY_COLOR;
 }
 
 // рендер курсов
@@ -249,8 +263,6 @@ function renderCourses() {
     const matchBySearch = isCourseMatchSearch(course, searchQuery);
     return matchByCategory && matchBySearch;
   });
-
-  //filteredCoursesCount = filteredCourses.length;
 
   // отображать ли кнопку load more
   if (coursesVisibleCount >= filteredCourses.length) {
